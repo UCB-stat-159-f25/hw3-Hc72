@@ -19,7 +19,7 @@ jobs:
       - name: Install MyST
         run: pip install mystmd
       - name: Build HTML
-        run: myst build --renderer html
+        run: myst build --html
       - name: Upload Pages
         uses: actions/upload-pages-artifact@v3
         with:
