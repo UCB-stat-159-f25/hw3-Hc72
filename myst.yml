@@ -11,11 +11,14 @@ project:
 site:
   template: book-theme
   baseurl: https://ucb-stat-159-f25.github.io/hw3-Hc72/
+  options:
+    hide_toc: true
 
 toc:
   nav:
     - Home: index.md
     - Notebook: LOSC_Event_tutorial.ipynb
+    
   # options:
   #   favicon: favicon.ico
   #   logo: site_logo.png
