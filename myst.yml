@@ -1,0 +1,21 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 1a3e81e0-acd6-412a-b2b1-9852f82b0c9a
+  title: "LIGO Tools"
+  # description: 
+  # keywords: []
+  authors: ["LIGO Scientific Collaboration (LSC) and Hannah Chung"]
+  github: https://github.com/UCB-stat-159-f25/hw3-Hc72
+  # To autogenerate a Table of Contents, run "myst init --write-toc"
+site:
+  template: book-theme
+toc:
+  nav:
+    - Home: index.md
+    - Notebook: LOSC_Event_tutorial.ipynb
+  # options:
+  #   favicon: favicon.ico
+  #   logo: site_logo.png
+
+

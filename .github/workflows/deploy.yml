@@ -1,0 +1,28 @@
+name: Deploy MyST site to GitHub Pages
+on:
+  push:
+    branches:
+      - main
+
+env:
+  BASE_URL: /hw3-Hc72
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install MyST
+        run: pip install mystmd
+      - name: Build HTML
+        run: myst build --renderer html
+      - name: Upload Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _build/html
+      - name: Deploy to Pages
+        uses: actions/deploy-pages@v4
