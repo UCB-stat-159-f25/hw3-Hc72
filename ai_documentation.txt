@@ -1,0 +1,18 @@
+I used AI (Chat Gpt) to help me troubleshoot when I was having bugs with deploying. I kept getting a very weirdly formatted website.
+
+Input: A screenshot of my website (also on Ed #195), a screenshot of my deploy.yml and "What could be causing this to happen?"
+
+Output: 
+
+Got it — if it looks unstyled, that means GitHub Pages isn’t serving MyST’s static CSS/JS assets correctly.
+This happens when the _build/html folder doesn’t contain MyST’s full theme files at deploy time (common on JupyterHub builds).
+
+✅ 1. Open your deploy.yml (in .github/workflows/)
+Replace the Build HTML section with this version so it builds a fully self-contained site:
+- name: Build HTML
+  run: myst build --html --static
+That --static flag makes MyST copy all CSS, fonts, JS into _build/html instead of loading them remotely.
+
+Once it’s styled, it’ll have the correct sidebar, search bar, and fonts — not the raw text view.
+Do you want to paste your current .github/workflows/deploy.yml here so I can double-check it before you push?
+
