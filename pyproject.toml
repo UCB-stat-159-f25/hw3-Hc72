@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools >= 70", "wheel", "numpy"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ligotools"
+authors = [
+  { name="Ligo Scientific Collaboration (LSC) and Hannah Chung", email="hchung72@berkeley.edu" },
+]
+description = "Tools for data analysis on LIGO open source data"
+readme = "README.md"
+
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=2.0",
+    "scipy>=1.13",
+    "h5py>=3.12",
+    "matplotlib>=3.9",
+    "ipykernel>=6.29"
+]
+
+license = "BSD-3-Clause"
+license-files = ["LICEN[CS]E*"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+
+keywords = ["tools", "toys"]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/Hc72/ligotools"
+Issues = "https://github.com/Hc72/ligotools/issues"
+
+[tool.setuptools]
+packages = ["ligotools"]
+
+[tool.setuptools.dynamic]
+version = {attr = "ligotools.__version__"}
+
