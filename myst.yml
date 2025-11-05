@@ -10,6 +10,8 @@ project:
   # To autogenerate a Table of Contents, run "myst init --write-toc"
 site:
   template: book-theme
+  baseurl: https://ucb-stat-159-f25.github.io/hw3-Hc72/
+
 toc:
   nav:
     - Home: index.md
